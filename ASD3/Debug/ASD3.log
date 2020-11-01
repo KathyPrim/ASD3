@@ -1,0 +1,4 @@
+﻿  ASD3.cpp
+  heap.cpp
+  Создание кода...
+C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(17): error C4716: heap::contaains: должна возвращать значение
