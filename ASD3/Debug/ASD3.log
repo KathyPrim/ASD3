@@ -1,4 +1,3 @@
-﻿  ASD3.cpp
-  heap.cpp
-  Создание кода...
-C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(17): error C4716: heap::contaains: должна возвращать значение
+﻿heap.obj : error LNK2005: "public: __thiscall heap::heap(int)" (??0heap@@QAE@H@Z) уже определен в ASD3.obj
+heap.obj : error LNK2005: "public: __thiscall heap::~heap(void)" (??1heap@@QAE@XZ) уже определен в ASD3.obj
+C:\Users\User\source\repos\3sem\ASD\ASD3\Debug\ASD3.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
