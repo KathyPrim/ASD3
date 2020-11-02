@@ -1,11 +1,20 @@
 #include"../ASD3/heap.h"
 
+DeepIterator* heap::create_dft_iterator()
+{
+	return DeepIterator();
+}
+
 void heap::add_first(int newElem) {
 	heap* lot = new heap(newElem);
 }
 
 void heap::reset_heap() {
 	size = 0;
+}
+
+size_t heap::get_size() {
+	return this->size;
 }
 
 void heap::swap(int number1, int number2) {
@@ -45,50 +54,46 @@ void heap::insert(int newElem) {
 		else break;
 	}
 }
-//Iterator* heap::create_iterator_deep()
-//{
-//	return new DeepIterator(0);
-//}
-//Iterator* heap::create_iterator_wide()
-//{
-//	return nullptr;
-//}
-///*
-//Iterator create_dft_iterator(); // deep-first
-//Iterator create_bft_iterator(); // breadth-first
-//*/
-//
-//heap::DeepIterator::DeepIterator(int start)
-//{
-//	current = start;
-//	S = new Stack();
-//	S->push_back(start);
-//	deep = new bool[];
-//}
-//
-//int heap::DeepIterator::next()
-//{
-//	return 0;
-//}
-//
-//bool heap::DeepIterator::has_next()
-//{
-//	return false;
-//}
-//
-//heap::WideIterator::WideIterator(int start)
-//{
-//}
-//
-//int heap::WideIterator::next()
-//{
-//	return 0;
-//}
-//
-//bool heap::WideIterator::has_next()
-//{
-//	return false;
-//}
+
+
+
+heap::DeepIterator::DeepIterator(int start = 0, heap* lot)
+{
+	current = start;
+	S = new Stack();
+	S->push_back(start);
+	deep = new bool[lot->get_size()];
+}
+
+int heap::DeepIterator::next()
+{
+	int V = 0;
+	S->push_back(V);
+}
+
+bool heap::DeepIterator::has_next()
+{
+	return false;
+}
+
+heap::WideIterator::WideIterator(int start = 0)
+{
+	current = 0;
+}
+
+int heap::WideIterator::next()
+{
+	if (has_next()) {
+		current++;
+		return lot->data[current - 1];
+	}
+	return -1;
+}
+
+bool heap::WideIterator::has_next()
+{
+	return (current<lot->size-1);
+}
 
 void heap::print() {
 	for (int i = 0; i < size; i++) {

@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-//#include"Iterator.h"
+#include"Iterator.h"
 #include"Stack.h"
 
 class heap
@@ -8,36 +8,39 @@ class heap
 public:
 	heap(int newData);
 	~heap();
+	size_t get_size();
 	void swap(int number1, int number2);
 	bool contaains(int elem);
 	void insert(int newElem);
 	void print();
 	
-	//Iterator create_dft_iterator(); // deep-first
-	//Iterator create_bft_iterator(); // breadth-first
-	//class DeepIterator : public Iterator
-	//{
-	//public:
-	//	DeepIterator(int start);
-	//	int next() override;
-	//	bool has_next() override;
+	class DeepIterator : public Iterator
+	{
+	public:
+		DeepIterator(int start, heap* lot);
+		int next() override;
+		bool has_next() override;
 
-	//private:
-	//	int current;
-	//	Stack* S;
-	//	bool* deep;
-	//	int size;
-	//};
+	private:
+		int current;
+		Stack* S;
+		bool* deep;
+		heap* lot;
+	};
 
-	//class WideIterator : public Iterator 
-	//{
-	//public:
-	//	WideIterator(int start);
-	//	int next() override;
-	//	bool has_next() override;
-	//private:
-	//	int current;
-	//};
+	class WideIterator : public Iterator 
+	{
+	public:
+		WideIterator(int start = 0);
+		int next() override;
+		bool has_next() override;
+	private:
+		int current;
+		heap* lot;
+	};
+
+	DeepIterator create_dft_iterator(); // deep-first
+	WideIterator create_bft_iterator(); // breadth-first
 
 
 private:
