@@ -1,0 +1,4 @@
+﻿  heap.cpp
+heap.obj : error LNK2005: "public: __cdecl heap::heap(int)" (??0heap@@QEAA@H@Z) уже определен в ASD3.obj
+heap.obj : error LNK2005: "public: __cdecl heap::~heap(void)" (??1heap@@QEAA@XZ) уже определен в ASD3.obj
+C:\Users\User\source\repos\3sem\ASD\ASD3\x64\Debug\ASD3.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
