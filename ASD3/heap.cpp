@@ -23,26 +23,23 @@ size_t heap::get_size() {
 
 void heap::swap(int number1, int number2) {
 	int swap = data[number1];
-	number2 = number2;
-	number2 = swap;
+	data[number1] = data[number2];
+	data[number2] = swap;
 }
 
 void heap::shiftUp(int k) // elem have to be upper than it is
 {
 	int parent = (k - 1) / 2;
-	while (data[k] > data[parent]) {
+	while ((data[k] < data[parent])&&(k<heap_size)) {
 		if (k % 2) { // if index is odd then elem is left
 			parent = (k - 1) / 2;
 		}
 		else {
 			parent = (k - 2) / 2;
 		}
-		if (data[k] > data[parent]) {
-			swap(k, parent);
-			k++;
-			parent = -1;
-		}
-		else break;
+		swap(k, parent);
+		k++;
+		parent = -1;
 	}
 }
 
@@ -50,10 +47,8 @@ void heap::shiftDown(int k = 0) // starting index
 {
 	int right = 2 * k + 2, left = 2 * k + 1; // indexes of left and right childs
 	int least;
-	while (left < heap_size) { // we have at least 1 child
+	while ((left < heap_size)&&(k<heap_size)) { // we have at least 1 child
 		// 3 types: left < k, left is the only or left>k, right < k.
-		left = 2 * k + 1;
-		right = 2 * k + 2;
 		if (right < heap_size) { // both children
 			if (data[k] > data[left]) { // if non-ordered
 				least = min_data(left, right);
@@ -63,6 +58,8 @@ void heap::shiftDown(int k = 0) // starting index
 		}
 		if (data[k] > data[left]) swap(k, left);
 		k++;
+		left = 2 * k + 1;
+		right = 2 * k + 2;
 	}
 }
 
@@ -86,7 +83,7 @@ void heap::insert(int newElem) {
 	else {
 		data[heap_size] = newElem; // adding to the end
 		heap_size++; // changing size
-		shiftUp((int)heap_size - 1);
+		shiftUp((int)heap_size-1);
 	}
 }
 

@@ -7,6 +7,7 @@ int main()
 	h->insert(10);
 	h->insert(2);
 	h->insert(3);
-	h->insert(4)
+	h->insert(4);
+	h->remove(0);
 	h->print();
 }
