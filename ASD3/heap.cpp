@@ -82,11 +82,11 @@ void heap::insert(int newElem) {
 			throw std::out_of_range("Allocation error");
 			return;
 		}
-		else {
-			data[heap_size] = newElem; // adding to the end
-			heap_size++; // changing size
-			shiftUp((int)heap_size - 1);
-		}
+	}
+	else {
+		data[heap_size] = newElem; // adding to the end
+		heap_size++; // changing size
+		shiftUp((int)heap_size - 1);
 	}
 }
 

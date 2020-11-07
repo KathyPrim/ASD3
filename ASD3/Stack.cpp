@@ -6,22 +6,7 @@ void Stack::reset_stack()
 	stack_size = 0;
 }
 
-Stack::Stack()
-{
-	reset_stack();
-}
-
-Stack::~Stack()
-{
-	if (tail) {
-		while (tail->prev) {
-			pop_back();
-		}
-		reset_stack();
-	}
-}
-
-void Stack::add_first(int newElem)
+void Stack::stack_add_first(int newElem)
 {
 	tail = new Node(newElem);
 }
@@ -29,7 +14,7 @@ void Stack::add_first(int newElem)
 void Stack::push_back(int newElem)
 {
 	if (stack_size == 0) {
-		add_first(newElem);
+		stack_add_first(newElem);
 	}
 	else {
 		Node* tmp = new Node(newElem);

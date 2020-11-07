@@ -6,8 +6,16 @@
 class heap
 {
 public:
-	heap(int newData);
-	~heap();
+	heap(int newData)
+	{
+		this->data = new int[max_size];
+		data[0] = newData;
+		this->heap_size = 1;
+	};
+	~heap() {
+		delete this->data;
+		heap_size = 0;
+	};
 	size_t get_size();
 	void swap(int number1, int number2);
 	void shiftUp(int k);
@@ -67,16 +75,3 @@ private:
 	size_t max_size = 1000;
 	int* data;
 };
-
-heap::heap(int newData)
-{
-	this->data = new int[max_size];
-	data[0] = newData;
-	this->heap_size = 1;
-}
-
-heap::~heap()
-{
-	delete this->data;
-	heap_size = 0;
-}

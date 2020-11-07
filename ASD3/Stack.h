@@ -2,7 +2,7 @@
 class Stack
 {
 private:
-	void add_first(int newElem);
+	void stack_add_first(int newElem);
 	void reset_stack();
 
 	class Node
@@ -23,8 +23,20 @@ private:
 
 public:
 
-	Stack();
-	~Stack();
+	Stack()
+	{
+		reset_stack();
+	};
+
+	~Stack()
+	{
+		if (tail) {
+			while (tail->prev) {
+				pop_back();
+			}
+			reset_stack();
+		}
+	};
 
 	void push_back(int newElem);
 	void pop_back();
