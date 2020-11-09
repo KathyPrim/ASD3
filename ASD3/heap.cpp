@@ -113,7 +113,7 @@ int heap::DeepIterator::next()
 {
 	int res;
 	int left = current * 2 + 1, right = current * 2 + 2;
-	while (true)
+	while (done< deep_size)
 	{
 		if ((left < deep_size) && (!colored[left])) { // non-colored left child
 			current = current * 2 + 1;
@@ -130,9 +130,10 @@ int heap::DeepIterator::next()
 	res = current;
 	colored[res] = true;
 	S->pop_back();
-	if (res % 2) current = (current - 2) / 2;
-	else current = (current - 1) / 2;
-	return res;
+	if (res % 2) current = (current - 1) / 2;
+	else current = (current - 2) / 2;
+	done++;
+	return lot[res];
 }
 
 bool heap::DeepIterator::has_next()
@@ -142,16 +143,13 @@ bool heap::DeepIterator::has_next()
 
 int heap::WideIterator::next()
 {
-	if (has_next()) {
-		current++;
-		return lot[current - 1];
-	}
-	return -1;
+	current++;
+	return lot[current - 1];
 }
 
 bool heap::WideIterator::has_next()
 {
-	return (current<(wide_size-1));
+	return (current<wide_size);
 }
 
 void heap::print() {

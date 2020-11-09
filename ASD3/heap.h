@@ -3,6 +3,8 @@
 #include"Iterator.h"
 #include"Stack.h"
 
+using namespace std;
+
 class heap
 {
 public:
@@ -39,6 +41,9 @@ public:
 			S->push_back(current);
 			deep_size = size;
 			colored = new bool[deep_size];
+			for (int i = 0; i < deep_size; i++) 
+				colored[i] = false;
+			done = 0;
 		};
 		int next() override;
 		bool has_next() override;
@@ -49,6 +54,7 @@ public:
 		bool* colored;
 		int* lot;
 		size_t deep_size;
+		int done;
 	};
 
 	class WideIterator : public Iterator 
