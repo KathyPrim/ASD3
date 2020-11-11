@@ -1,14 +1,13 @@
 ﻿  ASD3_test.cpp
-C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.h(44,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.h(43,22): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(33,37): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(50,15): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(50,31): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(52,13): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(67,20): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(92,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(116,13): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(118,13): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(123,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(119,13): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(124,19): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(152,17): warning C4018: <: несоответствие типов со знаком и без знака
 C:\Users\User\source\repos\3sem\ASD\ASD3\ASD3\heap.cpp(156,20): warning C4018: <: несоответствие типов со знаком и без знака
      Создается библиотека C:\Users\User\source\repos\3sem\ASD\ASD3\Debug\ASD3_test.lib и объект C:\Users\User\source\repos\3sem\ASD\ASD3\Debug\ASD3_test.exp

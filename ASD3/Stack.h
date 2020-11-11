@@ -41,4 +41,5 @@ public:
 	void push_back(int newElem);
 	void pop_back();
 	bool isEmpty();
+	int return_last();
 };

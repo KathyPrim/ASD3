@@ -42,3 +42,8 @@ bool Stack::isEmpty()
 {
 	return (stack_size==0);
 }
+
+int Stack::return_last()
+{
+	return tail->data;
+}

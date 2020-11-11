@@ -111,9 +111,10 @@ Iterator* heap::create_bft_iterator()
 
 int heap::DeepIterator::next()
 {
+	int current = S->return_last();
 	int res;
 	int left = current * 2 + 1, right = current * 2 + 2;
-	while (done< deep_size)
+	while (true)
 	{
 		if ((left < deep_size) && (!colored[left])) { // non-colored left child
 			current = current * 2 + 1;
@@ -132,7 +133,6 @@ int heap::DeepIterator::next()
 	S->pop_back();
 	if (res % 2) current = (current - 1) / 2;
 	else current = (current - 2) / 2;
-	done++;
 	return lot[res];
 }
 

@@ -51,5 +51,35 @@ namespace ASD3test
 			lot->remove(elem);
 			Assert::AreEqual((int)lot->get_size(), 2);
 		}
+
+		TEST_METHOD(deep) {
+			lot->insert(0);
+			lot->insert(2);
+			lot->insert(3);
+			lot->insert(4);
+			lot->insert(10);
+			Iterator* deep = lot->create_dft_iterator();
+			Assert::AreEqual(deep->next(), 3);
+			Assert::AreEqual(deep->next(), 4);
+			Assert::AreEqual(deep->next(), 1);
+			Assert::AreEqual(deep->next(), 10);
+			Assert::AreEqual(deep->next(), 2);
+			Assert::AreEqual(deep->next(), 0);
+		}
+
+		TEST_METHOD(wide) {
+			lot->insert(0);
+			lot->insert(2);
+			lot->insert(3);
+			lot->insert(4);
+			lot->insert(10);
+			Iterator* wide = lot->create_bft_iterator();
+			Assert::AreEqual(wide->next(), 0);
+			Assert::AreEqual(wide->next(), 1);
+			Assert::AreEqual(wide->next(), 2);
+			Assert::AreEqual(wide->next(), 3);
+			Assert::AreEqual(wide->next(), 4);
+			Assert::AreEqual(wide->next(), 10);
+		}
 	};
 }
