@@ -35,12 +35,14 @@ public:
 	{
 	public:
 		DeepIterator(size_t size, int* data) {
-			lot = data;
+			deep_lot->data = data;
+			deep_lot->heap_size = size;
+			//lot = data;
 			S = new Stack();
 			S->push_back(0);
-			deep_size = size;
-			colored = new bool[deep_size];
-			for (int i = 0; i < deep_size; i++) 
+			//deep_size = size;
+			colored = new bool[deep_lot->heap_size];
+			for (int i = 0; i < deep_lot->heap_size; i++)
 				colored[i] = false;
 		};
 		int next() override;
@@ -49,24 +51,22 @@ public:
 	private:
 		Stack* S;
 		bool* colored;
-		int* lot;
-		size_t deep_size;
+		heap* deep_lot;
 	};
 
 	class WideIterator : public Iterator 
 	{
 	public:
 		WideIterator(size_t size, int* data) {
-			lot = data;
+			wide_lot->data = data;
+			wide_lot->heap_size = size;
 			current = 0;
-			wide_size = size;
 		};
 		int next() override;
 		bool has_next() override;
 	private:
 		int current;
-		int* lot;
-		size_t wide_size;
+		heap* wide_lot;
 	};
 
 private:

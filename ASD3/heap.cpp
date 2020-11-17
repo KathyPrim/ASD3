@@ -116,12 +116,12 @@ int heap::DeepIterator::next()
 	int left = current * 2 + 1, right = current * 2 + 2;
 	while (true)
 	{
-		if ((left < deep_size) && (!colored[left])) { // non-colored left child
+		if ((left < deep_lot->heap_size) && (!colored[left])) { // non-colored left child
 			current = current * 2 + 1;
 			left = current * 2 + 1; right = current * 2 + 2;
 			S->push_back(current);
 		}
-		else if (( right< deep_size) && (!colored[right])) { // non-colored right child
+		else if (( right< deep_lot->heap_size) && (!colored[right])) { // non-colored right child
 			current = current * 2 + 2;
 			left = current * 2 + 1; right = current * 2 + 2;
 			S->push_back(current);
@@ -133,7 +133,7 @@ int heap::DeepIterator::next()
 	S->pop_back();
 	if (res % 2) current = (current - 1) / 2;
 	else current = (current - 2) / 2;
-	return lot[res];
+	return deep_lot->data[res];
 }
 
 bool heap::DeepIterator::has_next()
@@ -144,12 +144,12 @@ bool heap::DeepIterator::has_next()
 int heap::WideIterator::next()
 {
 	current++;
-	return lot[current - 1];
+	return wide_lot->data[current - 1];
 }
 
 bool heap::WideIterator::has_next()
 {
-	return (current<wide_size);
+	return (current<wide_lot->heap_size);
 }
 
 void heap::print() {
