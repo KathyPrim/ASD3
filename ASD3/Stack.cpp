@@ -8,7 +8,7 @@ void Stack::reset_stack()
 
 void Stack::stack_add_first(int newElem)
 {
-	tail = new Node(newElem);
+	tail = new SNode(newElem);
 }
 
 void Stack::push_back(int newElem)
@@ -17,7 +17,7 @@ void Stack::push_back(int newElem)
 		stack_add_first(newElem);
 	}
 	else {
-		Node* tmp = new Node(newElem);
+		SNode* tmp = new SNode(newElem);
 		tmp->prev = tail;
 		tail = tmp;
 	}
@@ -31,7 +31,7 @@ void Stack::pop_back()
 		reset_stack();
 	}
 	else {
-		Node* current = tail->prev;
+		SNode* current = tail->prev;
 		delete tail;
 		tail = current;
 		stack_size--;

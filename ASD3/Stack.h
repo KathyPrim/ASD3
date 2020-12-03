@@ -5,20 +5,20 @@ private:
 	void stack_add_first(int newElem);
 	void reset_stack();
 
-	class Node
+	class SNode
 	{
 	public:
-		Node(int data, Node* prev = nullptr) {
+		SNode(int data, SNode* prev = nullptr) {
 			this->data = data;
 			this->prev = prev;
 		};
-		~Node() {};
+		~SNode() {};
 
 		int data;
-		Node* prev;
+		SNode* prev;
 	};
 
-	Node* tail;
+	SNode* tail;
 	size_t stack_size;
 
 public:
